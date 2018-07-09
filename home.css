@@ -1,4 +1,27 @@
 body {
     font-family: 'Roboto', sans-serif;
+}
+
+.title  {
+    padding: 15px 15px 15px 15px;
+    color: #14A697;
+}
+
+.container {
     margin-top: 5%;
+    margin-bottom: 20.4%;
+}
+.col-sm-3 {
+    text-align: center;
+}
+.icon-button {
+    text-align: center;
+}
+
+footer {
+    background-color: #14A697;
+    opacity: 0.7;
+    margin-top: 5%;
+    padding: 31px;
+    color: #E5E5E5;
 }
