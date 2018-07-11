@@ -1,3 +1,16 @@
+function logout() {
+    firebase.auth().signOut();
+}
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      //do nothing
+    } else {
+      //login or create account
+      window.location.href = "index.html"
+    }
+});
+
 function playHover(element) {
     element.setAttribute('src', 'images/play-icon-h.png');
 }
