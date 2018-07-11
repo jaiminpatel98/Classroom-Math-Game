@@ -14,6 +14,12 @@ body {
     color: #F27649;
 }
 
+.heading {
+    text-align: center;
+    font-size: 35px;
+    color: #14A697;
+}
+
 .title  {
     padding: 15px 15px 15px 15px;
     color: #14A697;
