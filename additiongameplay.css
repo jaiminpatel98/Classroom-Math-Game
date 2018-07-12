@@ -33,8 +33,9 @@ body {
 
 .answers {
     display: grid;
-    grid-template-columns: 30px 110px 110px 110px 30px;
-    grid-template-rows: 30px 110px 110px 110px 30px;
+    grid-template-columns: 30px 80px 80px 80px 30px;
+    grid-template-rows: 30px 80px 80px 80px 30px;
+    text-align: center;
 }
 
 .icon-button {
@@ -52,16 +53,30 @@ footer {
 
 .leftarrowanswer {
     text-align: center;
+    vertical-align: middle;
+    height: 75px;
+    line-height: 75px;
 }
 
 .rightarrowanswer {
-    text-align: center;
+    
+    height: 75px;
+    line-height: 75px;
+
 }
 
+h3 {
+    text-align: center;
+    vertical-align: middle;
+}
+
+span {
+    vertical-align: middle;
+}
 .uparrowanswer {
     text-align: center;
 }
 
-.arrowanswer {
+.downarrowanswer {
     text-align: center;
 }
