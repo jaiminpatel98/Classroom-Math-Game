@@ -12,7 +12,7 @@
 
         <title>Quick Maths - Addition</title>
     </head>
-    <body>
+    <body onkeydown="arrowPressed(event);" onkeyup="arrowPressedDone(event)">
         <div class="full">
             
             <a href="home.html" class="home-link"><h1 class="title">Quick Math</h1></a>
@@ -21,7 +21,7 @@
                 <div class="answers">
                     <div class="leftarrow">
                         <div class="leftarrowimage">
-                            <img style="width: 100px;" src="images/arrow-left.png" onmouseover="leftHover(this)" onmouseout="leftUnhover(this)">
+                            <img id="left" style="width: 100px;" src="images/arrow-left.png" onmouseover="leftHover(this)" onmouseout="leftUnhover(this)">
                         </div>
                         <div class="leftarrowanswer">
                             <h3 style="color: #F27649;">sampleLeftAnswer</h3>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="rightarrow">
                         <div class="rightarrowimage">
-                            <img style="width: 100px;" src="images/arrow-right.png" onmouseover="rightHover(this)" onmouseout="rightUnhover(this)">
+                            <img  id="right" style="width: 100px;" src="images/arrow-right.png" onmouseover="rightHover(this)" onmouseout="rightUnhover(this)">
                         </div>
                         <div class="rightarrowanswer">
                             <h3 style="color: #14A697;">sampleRightAnswer</h3>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="uparrow">
                         <div class="uparrowimage">
-                            <img style="width: 100px;" src="images/arrow-up.png" onmouseover="upHover(this)" onmouseout="upUnhover(this)">
+                            <img id="up" style="width: 100px;" src="images/arrow-up.png" onmouseover="upHover(this)" onmouseout="upUnhover(this)">
                         </div>
                         <div class="uparrowanwer">
                             <h3 style="color: #F27649;">sampleUpAnswer</h3>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="downarrow">
                         <div class="downarrowimage">
-                            <img style="width: 100px;" src="images/arrow-down.png" onmouseover="downHover(this)" onmouseout="downUnhover(this)">
+                            <img id="down" style="width: 100px;" src="images/arrow-down.png" onmouseover="downHover(this)" onmouseout="downUnhover(this)">
                         </div>
                         <div class="downarrowanswer">
                             <h3 style="color: #14A697;">sampleDownAnswer</h3>
