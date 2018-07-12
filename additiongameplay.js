@@ -35,35 +35,3 @@ function arrowPressedDone(event) {
     }
 
 }
-
-function leftKeyDown(element) {
-    element.setAttribute('src', 'images/arrow-left-h.png');
-}
-
-function leftKeyUp(element) {
-    element.setAttribute('src', 'images/arrow-left.png');
-}
-
-function rightKeyDown(element) {
-    element.setAttribute('src', 'images/arrow-right-h.png');
-}
-
-function rightKeyUp(element) {
-    element.setAttribute('src', 'images/arrow-right.png');
-}
-
-function upHover(element) {
-    element.setAttribute('src', 'images/arrow-up-h.png');
-}
-
-function upUnhover(element) {
-    element.setAttribute('src', 'images/arrow-up.png');
-}
-
-function downHover(element) {
-    element.setAttribute('src', 'images/arrow-down-h.png');
-}
-
-function downUnhover(element) {
-    element.setAttribute('src', 'images/arrow-down.png');
-}

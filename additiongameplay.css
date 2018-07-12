@@ -33,12 +33,13 @@ body {
 
 .answers {
     display: grid;
+    grid-template-columns: 30px 110px 110px 110px 30px;
+    grid-template-rows: 30px 110px 110px 110px 30px;
 }
 
 .icon-button {
     text-align: center;
 }
-
 
 
 footer {
@@ -47,4 +48,20 @@ footer {
     margin-top: 5%;
     padding: 1.5%;;
     color: #E5E5E5;
+}
+
+.leftarrowanswer {
+    text-align: center;
+}
+
+.rightarrowanswer {
+    text-align: center;
+}
+
+.uparrowanswer {
+    text-align: center;
+}
+
+.arrowanswer {
+    text-align: center;
 }
