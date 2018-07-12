@@ -1,0 +1,50 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.home-link a{
+    text-decoration: none; 
+}
+
+.home-link:hover {
+    text-decoration: none; 
+}
+
+.home-link:hover h1 {
+    color: #F27649;
+}
+
+.heading {
+    text-align: center;
+    font-size: 35px;
+    color: #14A697;
+}
+
+.title  {
+    padding: 15px 15px 15px 15px;
+    color: #14A697;
+}
+
+.container {
+    margin-top: 5%;
+    margin-bottom: 20.4%;
+    text-align: center;
+}
+
+.answers {
+    display: grid;
+}
+
+.icon-button {
+    text-align: center;
+}
+
+
+
+footer {
+    background-color: #14A697;
+    opacity: 0.7;
+    margin-top: 5%;
+    padding: 1.5%;;
+    color: #E5E5E5;
+}
