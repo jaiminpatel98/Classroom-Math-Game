@@ -1,3 +1,13 @@
+var gameType;
+if(sessionStorage.getItem("gameType") == null) {
+
+} else {
+    gameType = sessionStorage.getItem("gameType");
+}
+function setType(type) {
+    sessionStorage.setItem("gameType", type);
+}
+
 function arrowPressed(event) {
     var keyPressed = event.charCode || event.keyCode;
     var getKey = String.fromCharCode(keyPressed);
@@ -19,7 +29,7 @@ function arrowPressed(event) {
             document.getElementById("down").setAttribute('src', 'images/arrow-down-h.png');
             guess = document.getElementById("downOption").innerHTML;
     }
-    checkAnswer(guess);
+    checkAnswer(guess, questionNumber);
     nextQuestion(questionNumber);
 }
 
@@ -53,16 +63,30 @@ function firebaseSetup() {
       };
       firebase.initializeApp(config);
       database = firebase.database();
-      var ref = database.ref('Questions/Addition');
-      ref.on("value", gotQuestions, errorQuestions);
+      var addRef = database.ref('Questions/Addition');
+      var subRef = database.ref('Questions/Subtraction');
+      var mulRef = database.ref('Questions/Multiplication');
+      var divRef = database.ref('Questions/Division');
+      alert(gameType);
+      if (gameType == 'add') {
+        addRef.on("value", gotQuestions, errorQuestions);
+      } else if (gameType == 'sub') {
+          subRef.on("value", gotQuestions, errorQuestions);
+      } else if (gameType == 'mul') {
+          mulRef.on("value", gotQuestions, errorQuestions);
+      } else if (gameType == 'div') {
+          divRef.on("value", gotQuestions, errorQuestions);
+      }
       
 }
+
 var questionSet = [];
 var answerSet = [];
 var optionsSet = [];
 var questionNumber = 1;
 var currentAnswer = 0;
 var currentScore = 0;
+var q10 = true;
 function gotQuestions(data) {
     
     var questions = data.val();
@@ -98,18 +122,22 @@ function errorQuestions(err) {
     console.log(err);
 }
 
-function checkAnswer(guess) {
-    if(guess == currentAnswer){
-        currentScore = currentScore + 100;
-        document.getElementById("score").innerHTML = "Score: " + currentScore;
-    }
-    else {
-        if(currentScore >= 50){
-            currentScore = currentScore - 50;
+function checkAnswer(guess, currentQuestion) {
+    if (q10 == true) {
+        if(guess == currentAnswer){
+            currentScore = currentScore + 100;
+            document.getElementById("score").innerHTML = "Score: " + currentScore;
         }
-        document.getElementById("score").innerHTML = "Score: " + currentScore;
+        else {
+            if(currentScore >= 50){
+                currentScore = currentScore - 50;
+            }
+            document.getElementById("score").innerHTML = "Score: " + currentScore;
+        }
+        if (currentQuestion == 10) {
+            q10 = false;
+        }
     }
-
 }
 
 function nextQuestion(currentQuestion) {
@@ -141,3 +169,5 @@ function saveScore() {
 function returnHome() {
     window.location.href = "home.html";
 }
+
+
