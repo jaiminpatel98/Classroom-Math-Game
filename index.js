@@ -41,8 +41,6 @@ function signup() {
         alert("Error " + errorCode + " : "+ errorMessage);
         // ...
     });
-    
-    
 
 }
 
@@ -51,12 +49,12 @@ function setUserInfo() {
     var lastname = document.getElementById("lastname");
     var level = document.getElementById("level");
     var database = firebase.database();
-    var userID = firebase.auth().currentUser.uid;
-
-    database.ref('users/' + userID).set({
+    var ref = database.ref("users");
+    var data = {
         firstname: firstname,
         lastname: lastname,
         level: level
-    });
+    };
+    ref.push(data);
 
 }

@@ -163,7 +163,20 @@ function saveAndQuit() {
 }
 
 function saveScore() {
-
+    var user = firebase.auth().currentUser.uid;
+    alert("users/" + user + "/scores");
+    var ref = database.ref("users/" + user +  "/scores");
+    var d = new Date();
+    var year = d.getFullYear();
+    var month = d.getMonth();
+    var day = d.getDate();
+    var date = year + "/" + month + "/" + day;
+    var data = {
+        score: currentScore,
+        date: date
+        
+    };
+    ref.push(data);
 }
 
 function returnHome() {
