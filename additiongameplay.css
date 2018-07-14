@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-    padding: 10% 22.5%;
+    padding: 0% 22.5%;
     text-align: center;
     
 }
@@ -44,7 +44,10 @@ body {
     text-align: center;
 }
 
-
+.scoreboard {
+    margin: 0 0 0 80%;
+    color: #14A697;
+}
 
 
 .leftarrowanswer {
@@ -82,4 +85,8 @@ span {
     padding-top: 5%;
     color: #14A697;
     font-size: 5em;
+}
+
+h2 {
+    color: #14A697;
 }

@@ -16,13 +16,16 @@
         <div class="full">
             
             <a href="home.html" class="home-link"><h1 class="title">Quick Math</h1></a>
-            <h1 class="question" id="question">(6 + 5) - 5</h1>
+            <div class="scoreboard">
+                <h1 class="score" id = "score">Score: 0</h1>
+            </div>
+            <h1 class="question" id="question">Loading...</h1>
             <div class="container">
                 <div class="answers">
                     <div class = "emptyspot"></div>
                     <div class = "emptyspot"></div>
-                    <div class="uparrowanswer">
-                        <h2 style="color: #14A697;">32</h2>
+                    <div class="uparrowanswer" id="upOption">
+                        <h2 style="color: #14A697;"></h2>
                     </div>
                     <div class = "emptyspot"></div>
                     <div class = "emptyspot"></div>
@@ -33,8 +36,8 @@
                     </div>
                     <div class = "emptyspot"></div>
                     <div class = "emptyspot"></div>
-                    <div class="leftarrowanswer">
-                        <h2 style="color: #14A697;">24</h2>
+                    <div class="leftarrowanswer" id="leftOption">
+                        <h2 style="color: #14A697;"></h2>
                     </div>
                     <div class="leftarrowimage">
                         <img id="left" style="width: 75px;" src="images/arrow-left.png">
@@ -43,8 +46,8 @@
                     <div class="rightarrowimage">
                         <img  id="right" style="width: 75px;" src="images/arrow-right.png">
                     </div>
-                    <div class="rightarrowanswer">
-                        <h2 style="color: #14A697;">12</h2>
+                    <div class="rightarrowanswer" id="rightOption">
+                        <h2 style="color: #14A697;"></h2>
                     </div>
                     <div class = "emptyspot"></div>
                     <div class = "emptyspot"></div>
@@ -55,11 +58,29 @@
                     <div class = "emptyspot"></div>
                     <div class = "emptyspot"></div>
                     <div class = "emptyspot"></div>
-                    <div class="downarrowanswer">
-                        <h2 style="color: #14A697;">8</h2>
+                    <div class="downarrowanswer" id="downOption">
+                        <h2 style="color: #14A697;"></h2>
                     </div>  
                     <div class = "emptyspot"></div>
                     <div class = "emptyspot"></div>          
+                </div>
+            </div>
+            
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Game Complete!</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            
+                        </div>
+                        <div class="modal-body" id="scoreText">
+                            <p>Loading Score...</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="saveAndQuit()">Save Score and Quit</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
