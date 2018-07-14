@@ -35,3 +35,27 @@ function arrowPressedDone(event) {
     }
 
 }
+
+function firebaseSetup() {
+    var config = {
+        apiKey: "AIzaSyB3aDWMeVBkoBX6_Td6WKjj81kRiETBHmA",
+        authDomain: "quick-maths-cb609.firebaseapp.com",
+        databaseURL: "https://quick-maths-cb609.firebaseio.com",
+        projectId: "quick-maths-cb609",
+        storageBucket: "quick-maths-cb609.appspot.com",
+        messagingSenderId: "704606376986"
+      };
+      firebase.initializeApp(config);
+      database = firebase.database();
+      var ref = database.ref('Questions');
+      ref.on("value", gotQuestions, errorQuestions);
+}
+
+function gotQuestions(data) {
+    console.log(data.val());
+}
+
+function errorQuestions(err) {
+    console.log("Error:");
+    console.log(err);
+}
