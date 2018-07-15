@@ -5,6 +5,8 @@ function logout() {
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       //do nothing
+      var user = firebase.auth().currentUser.uid;
+      sessionStorage.setItem("userId", user);
     } else {
       //login or create account
       window.location.href = "index.html"
