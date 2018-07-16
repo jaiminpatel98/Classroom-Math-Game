@@ -1,3 +1,24 @@
+var levelValue;
+if (localStorage.getItem("levelValue" == null)) {
+
+} else {
+    levelValue = localStorage.getItem("levelValue");
+} 
+
+function onLoad() {
+    alert(localStorage.getItem("levelValue"));
+    alert(levelValue);
+    if (levelValue == 'Level 2') {
+        alert(true);
+        document.getElementById('mul').onclick = function() {setType('mul2')};
+        document.getElementById('div').onclick = function() {setType('div2')};
+    } else {
+        alert(false);
+    }
+}
+
+
+
 function plusHover(element) {
     element.setAttribute('src', 'images/plus-h.png');
 }

@@ -4,6 +4,25 @@ if(sessionStorage.getItem("gameType") == null) {
 } else {
     gameType = sessionStorage.getItem("gameType");
 }
+/* function setType(type) {
+    //get current user
+    var user = firebase.auth().currentUser.uid;
+    alert(user);
+    var database = firebase.database();
+    //get the reference to the user settings
+    var userRef = database.ref("users/" + user + "/settings/level");
+    userRef.once("value", getSettings, errSettings);
+    alert("levelValue: " + levelValue);
+    if(levelValue == 1){
+        alert("Level1");
+        sessionStorage.setItem("gameType", type);
+    } else {
+        alert("Level2");
+        type = type + "2";
+        sessionStorage.setItem("gameType", type);
+    }
+} */
+
 function setType(type) {
     sessionStorage.setItem("gameType", type);
 }
@@ -61,21 +80,28 @@ function firebaseSetup() {
         storageBucket: "quick-maths-cb609.appspot.com",
         messagingSenderId: "704606376986"
       };
+      
       firebase.initializeApp(config);
       database = firebase.database();
+      
       var addRef = database.ref('Questions/Addition');
       var subRef = database.ref('Questions/Subtraction');
       var mulRef = database.ref('Questions/Multiplication');
+      var mul2Ref = database.ref('Questions/Multiplication2');
       var divRef = database.ref('Questions/Division');
-      alert(gameType);
+      var div2Ref = database.ref('Questions/Division2');
       if (gameType == 'add') {
         addRef.on("value", gotQuestions, errorQuestions);
       } else if (gameType == 'sub') {
-          subRef.on("value", gotQuestions, errorQuestions);
+        subRef.on("value", gotQuestions, errorQuestions);
       } else if (gameType == 'mul') {
-          mulRef.on("value", gotQuestions, errorQuestions);
+        mulRef.on("value", gotQuestions, errorQuestions);
       } else if (gameType == 'div') {
-          divRef.on("value", gotQuestions, errorQuestions);
+        divRef.on("value", gotQuestions, errorQuestions);
+      } else if (gameType == 'mul2') {
+        mul2Ref.on("value", gotQuestions, errorQuestions);
+      } else if (gameType == 'div2') {
+        div2Ref.on("value", gotQuestions, errorQuestions);
       }
       
 }

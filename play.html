@@ -24,7 +24,7 @@
     </script>
     <title>Quick Maths - Play</title>
   </head>
-  <body>
+  <body onload="onLoad()">
     <div class="full">
         
         <a href="home.html" class="home-link"><h1 class="title">Quick Math</h1></a>
@@ -45,13 +45,13 @@
                 </div>
                 <div class="col-sm-3">
                     <a href="gameplay.html" style="text-decoration: none;" class="icon-button">
-                        <img style="width: 200px;" src="images/multi.png" onmouseover="multiHover(this)" onmouseout="multiUnhover(this)" onclick="setType('mul')">
+                        <img style="width: 200px;" src="images/multi.png" onmouseover="multiHover(this)" onmouseout="multiUnhover(this)" id="mul" onclick="setType('mul')">
                         <h3 style="color: #F27649;">Multiplication</h3>
                     </a>
                 </div>
                 <div class="col-sm-3">
                     <a href="gameplay.html" style="text-decoration: none;" class="icon-button">    
-                        <img style="width: 200px;" src="images/div.png" onmouseover="divHover(this)" onmouseout="divUnhover(this)" onclick="setType('div')">
+                        <img style="width: 200px;" src="images/div.png" onmouseover="divHover(this)" onmouseout="divUnhover(this)" id="div" onclick="setType('div')">
                         <h3 style="color: #14A697;">Division</h3>
                 </a>
                 </div>
