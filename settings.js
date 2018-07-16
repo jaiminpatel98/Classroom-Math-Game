@@ -25,6 +25,7 @@ function onLoad() {
 function save() {
     saveSettings();
     document.getElementById('savebtn').className = "btn btn-outline-success";
+    window.location.href = 'home.html';
 }
 
 function saveSettings() {
