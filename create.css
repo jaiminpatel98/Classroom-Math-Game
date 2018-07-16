@@ -1,0 +1,40 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.home-link a{
+    text-decoration: none; 
+}
+
+.home-link:hover {
+    text-decoration: none; 
+}
+
+.home-link:hover h1 {
+    color: #F27649;
+}
+
+.title  {
+    padding: 15px 15px 15px 15px;
+    color: #14A697;
+}
+
+.heading {
+    color: #14A697;
+    text-align: center;
+    padding-top: 1%;
+}
+
+.container {
+    margin-top: 2.5%;
+    margin-bottom: 20.1%;
+}
+
+.col-sm-12 {
+    text-align: center;
+    padding: 2.5% 15% 2.5% 15%;
+}
+
+#buttons {
+    text-align: center;
+}

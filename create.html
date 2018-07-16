@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head onload="onLoad()">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="create.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+
+    <title>Quick Maths - Create</title>
+  </head>
+  <body onload="onLoad()">
+    <a href="home-educator.html" class="home-link"><h1 class="title">Quick Math</h1></a>
+    <h1 class="heading" id="heading">Create Question 1</h1>
+    <div class="container">
+        <div class="col-sm-6">
+            <h4>Click the '?' before proceeding:<button type="button" class="btn" data-toggle="modal" data-target="#myModal" style="text-align: center">?</button></h4>
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                              
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Instructions - Please completely follow the directions below</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                                
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <ul>
+                            <li>Question Set Name: The set name must be one word. <br>E.g. 'Set1'</li>
+                            <li>Problem: There must be a single space between every number and operation symbol. There must be no spaces before the first character and after the last character. <br>E.g. '5 + 5'</li>
+                            <li>Answer: The answer must contain no spaces and only numberical values. <br>E.g. '32'</li>
+                            <li>Possible Choices: There must be exactly 3 choices of numberical value separated by exactly 1 comma. <br>E.g. '1,2,3'</li>
+                        </ul>
+                    </div>
+                                
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                                
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <form>
+                <div class="form-group row">
+                    <label for="set-name" class="col-sm-3 col-form-label">Question Set Name</label>
+                    <div class="col-sm-6">
+                        <input id="set-name" class="form-control" placeholder="Set name...">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="problem" class="col-sm-3 col-form-label">Problem</label>
+                    <div class="col-sm-6">
+                        <input id="problem" class="form-control" placeholder="Problem...">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="answer" class="col-sm-3 col-form-label">Answer</label>
+                    <div class="col-sm-6">
+                    <input id="answer" class="form-control" placeholder="Answer...">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="choices" class="col-sm-3 col-form-label">Possible Choices (3 choices separated by commas)</label>
+                    <div class="col-sm-6">
+                        <input id="choices" class="form-control" placeholder="Option1, Option2, Option3...">
+                    </div>
+                </div>
+            </form>
+            <div class="row" id="buttons">
+                <div class="col-sm-6">
+                    <button type="button" class="btn btn-success" id="save" onclick="saveExit()">Save &amp; Exit</button>
+                </div>
+                <div class="col-sm-6">
+                    <button type="button" class="btn" id="new" onclick="newQuestion()">New Question</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="create.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
