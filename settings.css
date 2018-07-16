@@ -32,6 +32,7 @@ body {
 
 .card-title {
     color: #F27649;
+    text-align: center;
 }
 
 footer {
@@ -41,4 +42,3 @@ footer {
     padding: 1.5%;;
     color: #E5E5E5;
 }
-
