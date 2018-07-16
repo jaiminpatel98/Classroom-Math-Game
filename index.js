@@ -33,7 +33,6 @@ function login() {
 function signup() {
     var email = document.getElementById("signup-email").value;
     var password = document.getElementById("signup-password").value;
-    
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -43,7 +42,6 @@ function signup() {
     });
 
 }
-
 function setUserInfo() {
     var firstname = document.getElementById("firstname");
     var lastname = document.getElementById("lastname");

@@ -6,7 +6,19 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       //do nothing
       var user = firebase.auth().currentUser.uid;
+      var email = firebase.auth().currentUser.email;
       sessionStorage.setItem("userId", user);
+      database = firebase.database();
+      var ref = database.ref("users/" + user + "/email");
+      var ref2 = database.ref("users/" + user + "/accountType");
+      ref.set(email);
+      
+      if(email.includes("@edu")){
+        ref2.set("Educator");
+        window.location.href = "home-educator.html";
+      } else{
+          ref2.set("Student");
+      }
     } else {
       //login or create account
       window.location.href = "index.html"
