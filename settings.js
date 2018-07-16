@@ -16,7 +16,12 @@ function changeBackground() {
     color = color.value;
     document.body.style.backgroundColor = color;
 }
+function onLoad() {
+    if(localStorage.getItem("levelValue") != null) {
+        document.getElementById('level').value = localStorage.getItem("levelValue");
+    }
 
+}
 function save() {
     saveSettings();
 }
