@@ -86,11 +86,12 @@ function gotUsers(data) {
         var k = keys[i];
         console.log(users[k]);
         var currentEmail = users[k].email;
-        alert(currentEmail);
-        alert(student);
+        var currentUser = users[k].userID;
+        alert(currentUser);
         if(currentEmail == student){
             alert("MADE IT");
-            ref3 = database.ref("users/" + users[k].userID + "/customQuestions");
+            ref3 = database.ref("users/" + currentUser + "/customQuestions");
+            ref3.push("hey");
             alert(studentID);
         } else {
             alert("WRONG");
