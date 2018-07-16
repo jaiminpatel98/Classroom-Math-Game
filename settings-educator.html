@@ -25,7 +25,7 @@
     </script>
     <title>Quick Maths - Settings</title>
   </head>
-  <body onload="onLoad()">
+  <body onload="alertUser()">
     <a href="home-educator.html" class="home-link"><h1 class="title">Quick Math</h1></a>
     <div class="container">
         <div class="row">
@@ -35,41 +35,12 @@
                         <h4 class="card-title">Settings</h4>
                         <form>
                             <div class="form-group row">
-                                <label for="cp1" class="col-sm-3 col-form-label">Change Background</label>
-                                <div class="col-sm-6">
-                                    <input id="cp1" type="text" class="form-control" value="#FFFFFF"/>
-                                </div>
-                                <div class="col-sm-2">
-                                    <button type="button" class="btn" onclick="changeBackground()">Try it!</button>
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label for="addClass" class="col-sm-3 col-form-label">Add email to class</label>
                                 <div class="col-sm-6">
                                     <input id="addClass" class="form-control" placeholder="Student Email"/>
                                 </div>
-                            </div>
-                        
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <button type="button" id="savebtn" class="btn"  data-toggle="modal" data-target="#myModal">Save</button>
-                                    <div class="modal fade" id="myModal">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                            
-                                            <!-- Modal Header -->
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Are you sure you want to save?</h4>
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            </div>
-                                            <!-- Modal footer -->
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-success" data-dismiss="modal" onclick="save()">Yes, Save Settings</button>
-                                            </div>
-                                            
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn" onclick="addStudent()">Add</button>
                                 </div>
                             </div>
                         </form>
@@ -92,5 +63,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script src="bootstrap-colorpicker-2.5.0/dist/js/bootstrap-colorpicker.js"></script>
     <script src="settings-educator.js"></script>
+    <script src="home-educator.js"></script>
   </body>
 </html>

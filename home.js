@@ -14,10 +14,15 @@ firebase.auth().onAuthStateChanged(function(user) {
       ref.set(email);
       
       if(email.includes("@edu")){
-        ref2.set("Educator");
-        window.location.href = "home-educator.html";
+        ref2.set("Educator", function(){
+            window.location.href = "home-educator.html";
+        });
+        
       } else{
           ref2.set("Student");
+      }
+      if(email.includes("@edu")){
+        
       }
     } else {
       //login or create account

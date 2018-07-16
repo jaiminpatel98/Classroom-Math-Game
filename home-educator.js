@@ -1,7 +1,9 @@
 function logout() {
     firebase.auth().signOut();
 }
-
+function alertUser(){
+    alert("ALERT!");
+}
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       //do nothing
