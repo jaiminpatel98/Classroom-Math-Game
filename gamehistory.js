@@ -4,6 +4,7 @@ if(sessionStorage.getItem("userId") == null) {
 } else {
     user = sessionStorage.getItem("userId");
 }
+
 function onLoad() {
     var config = {
         apiKey: "AIzaSyB3aDWMeVBkoBX6_Td6WKjj81kRiETBHmA",
