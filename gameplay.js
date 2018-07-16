@@ -72,6 +72,7 @@ function firebaseSetup() {
       var mul2Ref = database.ref('Questions/Multiplication2');
       var divRef = database.ref('Questions/Division');
       var div2Ref = database.ref('Questions/Division2');
+      var cusRef = database.ref('Questions/CustomSet');
       if (gameType == 'add') {
         addRef.on("value", gotQuestions, errorQuestions);
       } else if (gameType == 'sub') {
@@ -84,6 +85,8 @@ function firebaseSetup() {
         mul2Ref.on("value", gotQuestions, errorQuestions);
       } else if (gameType == 'div2') {
         div2Ref.on("value", gotQuestions, errorQuestions);
+      } else if (gameType == 'custom') {
+        cusRef.on("value", gotQuestions, errorQuestions);
       }
       
 }
@@ -95,6 +98,7 @@ var questionNumber = 1;
 var currentAnswer = 0;
 var currentScore = 0;
 var q10 = true;
+var q2 = true;
 function gotQuestions(data) {
     
     var questions = data.val();
@@ -131,7 +135,23 @@ function errorQuestions(err) {
 }
 
 function checkAnswer(guess, currentQuestion) {
-    if (q10 == true) {
+    if (gameType == 'custom') {
+        if (q2 == true) {
+            if(guess == currentAnswer){
+                currentScore = currentScore + 100;
+                document.getElementById("score").innerHTML = "Score: " + currentScore;
+            }
+            else {
+                if(currentScore >= 50){
+                    currentScore = currentScore - 50;
+                }
+                document.getElementById("score").innerHTML = "Score: " + currentScore;
+            }
+            if (currentQuestion == 2) {
+                q2 = false;
+            }
+        }
+    } else if (q10 == true) {
         if(guess == currentAnswer){
             currentScore = currentScore + 100;
             document.getElementById("score").innerHTML = "Score: " + currentScore;
@@ -149,20 +169,34 @@ function checkAnswer(guess, currentQuestion) {
 }
 
 function nextQuestion(currentQuestion) {
-    if(currentQuestion != 10){
-        document.getElementById("question").innerHTML = questionSet[currentQuestion];
-        document.getElementById("leftOption").innerHTML = answerSet[currentQuestion];
-        document.getElementById("rightOption").innerHTML = optionsSet[currentQuestion][0];
-        document.getElementById("downOption").innerHTML = optionsSet[currentQuestion][1];
-        document.getElementById("upOption").innerHTML = optionsSet[currentQuestion][2];
-        currentAnswer=answerSet[currentQuestion];
-        questionNumber++;
+    if (gameType == 'custom') {
+        if (currentQuestion != 2) {
+            document.getElementById("question").innerHTML = questionSet[currentQuestion];
+            document.getElementById("leftOption").innerHTML = answerSet[currentQuestion];
+            document.getElementById("rightOption").innerHTML = optionsSet[currentQuestion][0];
+            document.getElementById("downOption").innerHTML = optionsSet[currentQuestion][1];
+            document.getElementById("upOption").innerHTML = optionsSet[currentQuestion][2];
+            currentAnswer=answerSet[currentQuestion];
+            questionNumber++;    
+        } else{
+            $("#myModal").modal();
+            document.getElementById("scoreText").innerHTML = "Your Score was: " + currentScore;
+        }
+    } else {
+        if (currentQuestion != 10){
+            document.getElementById("question").innerHTML = questionSet[currentQuestion];
+            document.getElementById("leftOption").innerHTML = answerSet[currentQuestion];
+            document.getElementById("rightOption").innerHTML = optionsSet[currentQuestion][0];
+            document.getElementById("downOption").innerHTML = optionsSet[currentQuestion][1];
+            document.getElementById("upOption").innerHTML = optionsSet[currentQuestion][2];
+            currentAnswer=answerSet[currentQuestion];
+            questionNumber++;
+        }
+        else{
+            $("#myModal").modal();
+            document.getElementById("scoreText").innerHTML = "Your Score was: " + currentScore;
+        }
     }
-    else{
-        $("#myModal").modal();
-        document.getElementById("scoreText").innerHTML = "Your Score was: " + currentScore;
-    }
-    
 }
 
 function saveAndQuit() {
@@ -191,5 +225,3 @@ function saveScore() {
 function returnHome() {
     window.location.href = "home.html";
 }
-
-
