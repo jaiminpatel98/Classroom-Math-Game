@@ -11,7 +11,7 @@ function addStudent() {
         }
         ref.push(data);
     }
-    addQuestions(user, student);
+    //addQuestions(user, student);
     document.getElementById("addClass").value = "";
 }
 
@@ -52,6 +52,7 @@ function gotClass(data){
         studentList[i] = tempStudent;
     }
     for(var i = 0; i < studentList.length; i++){
+        alert("multipleTimes");
         if(studentList[i] == student){
             alert("Entering Users");
             var ref2 = database.ref("users/" + user + "/Questions");
@@ -78,11 +79,13 @@ function errUsers(err) {
     console.log(err);
 }
 var ref3;
+var studentfound = false;
 function gotUsers(data) {
+    var i = 0;
     var users = data.val();
     var keys = Object.keys(users);
-    for(var i = 0; i < keys.length; i++)
-    {
+    while(!studentfound){
+        
         var k = keys[i];
         console.log(users[k]);
         var currentEmail = users[k].email;
@@ -96,7 +99,9 @@ function gotUsers(data) {
         } else {
             alert("WRONG");
         }
+        i++;
     }
+    
 }
 
 
