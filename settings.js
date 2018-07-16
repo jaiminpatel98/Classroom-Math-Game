@@ -24,6 +24,5 @@ function save() {
 function saveSettings() {
     var level = document.getElementById('level').value;
     localStorage.setItem("levelValue", level);
-    alert(localStorage.getItem("levelValue"));
 }
 

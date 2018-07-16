@@ -4,24 +4,6 @@ if(sessionStorage.getItem("gameType") == null) {
 } else {
     gameType = sessionStorage.getItem("gameType");
 }
-/* function setType(type) {
-    //get current user
-    var user = firebase.auth().currentUser.uid;
-    alert(user);
-    var database = firebase.database();
-    //get the reference to the user settings
-    var userRef = database.ref("users/" + user + "/settings/level");
-    userRef.once("value", getSettings, errSettings);
-    alert("levelValue: " + levelValue);
-    if(levelValue == 1){
-        alert("Level1");
-        sessionStorage.setItem("gameType", type);
-    } else {
-        alert("Level2");
-        type = type + "2";
-        sessionStorage.setItem("gameType", type);
-    }
-} */
 
 function setType(type) {
     sessionStorage.setItem("gameType", type);
@@ -194,13 +176,15 @@ function saveScore() {
     var ref = database.ref("users/" + user +  "/scores");
     var d = new Date();
     var year = d.getFullYear();
-    var month = d.getMonth();
+    var month = d.getMonth() + 1;
     var day = d.getDate();
+    var game = gameType;
     var date = year + "/" + month + "/" + day;
+
     var data = {
         score: currentScore,
-        date: date
-        
+        date: date,
+        type: game
     };
     ref.push(data);
 }
