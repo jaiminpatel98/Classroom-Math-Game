@@ -90,7 +90,7 @@ function gotUsers(data) {
         alert(student);
         if(currentEmail == student){
             alert("MADE IT");
-            ref3 = database.ref("users/" + users[k] + "/customQuestions");
+            ref3 = database.ref("users/" + users[k].userID + "/customQuestions");
             alert(studentID);
         } else {
             alert("WRONG");

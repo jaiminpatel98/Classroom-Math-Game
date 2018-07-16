@@ -11,8 +11,9 @@ firebase.auth().onAuthStateChanged(function(user) {
       database = firebase.database();
       var ref = database.ref("users/" + user + "/email");
       var ref2 = database.ref("users/" + user + "/accountType");
+      var ref3 = database.ref("users/" + user + "/userID");
       ref.set(email);
-      
+      ref3.set(user);
       if(email.includes("@edu")){
         ref2.set("Educator", function(){
             window.location.href = "home-educator.html";
