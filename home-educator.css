@@ -1,37 +1,29 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #FFFFFF;
-}
-
-.home-link a{
-    text-decoration: none; 
-}
-
-.home-link:hover {
-    text-decoration: none; 
-}
-
-.home-link:hover h1 {
-    color: #F27649;
 }
 
 .title  {
     padding: 15px 15px 15px 15px;
     color: #14A697;
+    display: inline-block;
+}
+
+#logout {
+    margin: 1.5% 1.5%;
+    position: absolute;
+    right: 0;
 }
 
 .container {
-    margin-top: 2.5%;
-    margin-bottom: 20.1%;
+    margin-top: 5%;
+    margin-bottom: 20.4%;
 }
 
-.col-sm-12 {
+.col-sm-3 {
     text-align: center;
-    padding: 2.5% 15% 2.5% 15%;
 }
 
-.card-title {
-    color: #F27649;
+.icon-button {
     text-align: center;
 }
 
