@@ -18,8 +18,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 function login() {
     var email = document.getElementById("login-email").value;
     var password = document.getElementById("login-password").value;
-    alert(email + " - " + password);
-    
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -37,7 +35,7 @@ function signup() {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        alert("Error " + errorCode + " : "+ errorMessage);
+        console.log("Error " + errorCode + " : "+ errorMessage);
         // ...
     });
 

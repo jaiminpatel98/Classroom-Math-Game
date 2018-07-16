@@ -172,7 +172,6 @@ function saveAndQuit() {
 
 function saveScore() {
     var user = firebase.auth().currentUser.uid;
-    alert("users/" + user + "/scores");
     var ref = database.ref("users/" + user +  "/scores");
     var d = new Date();
     var year = d.getFullYear();
