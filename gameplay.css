@@ -34,8 +34,8 @@ body {
 
 .answers {
     display: grid;
-    grid-template-columns: 30px 80px 80px 80px 30px;
-    grid-template-rows: 30px 80px 80px 80px 30px;
+    grid-template-columns: 50px 80px 80px 80px 50px;
+    grid-template-rows: 50px 80px 80px 80px 50px;
     text-align: center;
     
 }
@@ -74,6 +74,7 @@ span {
 }
 .uparrowanswer {
     text-align: center;
+    
 }
 
 .downarrowanswer {
@@ -89,4 +90,27 @@ span {
 
 h2 {
     color: #14A697;
+}
+
+#upOption {
+    color: #F27649;
+    font-size: 2.5em;
+
+}
+
+#downOption {
+    color: #F27649;
+    font-size: 2.5em;
+
+}
+
+#leftOption {
+    color: #F27649;
+    font-size: 2.5em;
+}
+
+#rightOption {
+    color: #F27649;
+    font-size: 2.5em;
+
 }
