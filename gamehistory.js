@@ -55,6 +55,8 @@ function scoresSuccess(data) {
             type = "Division - Level 1";
         } else if(type == "div2") {
             type = "Division - Level 2";
+        } else if(type == "custom") {
+            type = "Custom Set";
         }
         typeSet[i] = type;
     }
