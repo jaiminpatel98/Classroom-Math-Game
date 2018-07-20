@@ -17,21 +17,27 @@ function arrowPressed(event) {
         case "%":
             document.getElementById("left").setAttribute('src', 'images/arrow-left-h.png');
             guess = document.getElementById("leftOption").innerHTML;
+            checkAnswer(guess, questionNumber);
+            nextQuestion(questionNumber);
             break;
         case "'":
             document.getElementById("right").setAttribute('src', 'images/arrow-right-h.png');
             guess = document.getElementById("rightOption").innerHTML;
+            checkAnswer(guess, questionNumber);
+            nextQuestion(questionNumber);
             break;
         case "&":
             document.getElementById("up").setAttribute('src', 'images/arrow-up-h.png');
             guess = document.getElementById("upOption").innerHTML;
+            checkAnswer(guess, questionNumber);
+            nextQuestion(questionNumber);
             break;
         case "(":
             document.getElementById("down").setAttribute('src', 'images/arrow-down-h.png');
             guess = document.getElementById("downOption").innerHTML;
+            checkAnswer(guess, questionNumber);
+            nextQuestion(questionNumber);
     }
-    checkAnswer(guess, questionNumber);
-    nextQuestion(questionNumber);
 }
 
 function arrowPressedDone(event) {
