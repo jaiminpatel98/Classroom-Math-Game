@@ -1,2 +1,1 @@
-# quick-maths
-SEG3125 Project
+# Qucik Maths
